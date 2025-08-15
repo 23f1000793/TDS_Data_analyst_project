@@ -31,6 +31,14 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def read_root():
+    return {"message": "Hello Railway"}
+
 # Optional image conversion
 try:
     from PIL import Image
